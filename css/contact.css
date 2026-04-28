@@ -1,0 +1,206 @@
+/* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+
+.page-section.contact {
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-section.contact::before {
+  content: '';
+  position: absolute;
+  top: -300px;
+  left: -300px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.2) 0%, transparent 70%);
+  animation: contactGlow 8s ease-in-out infinite;
+}
+
+.page-section.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  right: -300px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.15) 0%, transparent 70%);
+  animation: contactGlow 8s ease-in-out infinite reverse;
+}
+
+@keyframes contactGlow {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+}
+
+/* Contact Wrapper Animation */
+.contact-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-info {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.contact-form {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Contact Items Stagger */
+.contact-item {
+  animation: itemPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.contact-item:nth-child(1) { animation-delay: 0.2s; }
+.contact-item:nth-child(2) { animation-delay: 0.3s; }
+.contact-item:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes itemPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Contact Icon Pulse */
+.contact-icon {
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+  50% { box-shadow: 0 0 40px var(--accent-glow), 0 0 60px var(--accent-glow); }
+}
+
+/* Form Input Focus Animation */
+.form-group input:focus,
+.form-group textarea:focus {
+  animation: inputGlow 0.3s ease-out;
+}
+
+@keyframes inputGlow {
+  0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4); }
+  100% { box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1), 0 0 35px rgba(108, 99, 255, 0.3); }
+}
+
+/* Form Groups Stagger */
+.form-group {
+  animation: formSlide 0.5s ease-out backwards;
+}
+
+.form-row .form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-row .form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-of-type(2) { animation-delay: 0.3s; }
+.form-group:nth-of-type(3) { animation-delay: 0.4s; }
+
+@keyframes formSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Submit Button Animation */
+.btn-full {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-full::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-full:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+/* Social Icons Animation */
+.contact-socials a {
+  animation: socialPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.contact-socials a:nth-child(1) { animation-delay: 0.5s; }
+.contact-socials a:nth-child(2) { animation-delay: 0.6s; }
+.contact-socials a:nth-child(3) { animation-delay: 0.7s; }
+.contact-socials a:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes socialPop {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Form Success Animation */
+.form-success {
+  animation: successSlide 0.5s ease-out;
+}
+
+@keyframes successSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-info,
+  .contact-form {
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}

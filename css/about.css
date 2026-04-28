@@ -1,0 +1,120 @@
+/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+
+.page-section.about {
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-section.about::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.15) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite;
+}
+
+.page-section.about::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 101, 132, 0.1) 0%, transparent 70%);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+}
+
+/* Enhanced About Layout */
+.about-layout {
+  position: relative;
+  z-index: 2;
+}
+
+.about-img-wrap {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.about-right {
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* About Card Hover Effects */
+.about-img-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-img-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 30px 80px rgba(108, 99, 255, 0.4);
+}
+
+.about-avatar {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* About Tags Animation */
+.about-tags span {
+  animation: tagPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+.about-tags span:nth-child(1) { animation-delay: 0.1s; }
+.about-tags span:nth-child(2) { animation-delay: 0.2s; }
+.about-tags span:nth-child(3) { animation-delay: 0.3s; }
+.about-tags span:nth-child(4) { animation-delay: 0.4s; }
+.about-tags span:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes tagPop {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-section.about::before,
+  .page-section.about::after {
+    width: 300px;
+    height: 300px;
+  }
+}

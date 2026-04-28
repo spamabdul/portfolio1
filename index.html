@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maaz | Frontend Developer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+      <div class="loader-logo">
+        <span class="logo-letter">M</span>
+        <span class="logo-letter">a</span>
+        <span class="logo-letter">a</span>
+        <span class="logo-letter">z</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <p class="loader-text">Loading Experience...</p>
+      <div class="loader-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- PARTICLES CANVAS -->
+  <canvas id="particles" class="particles-canvas"></canvas>
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Maaz<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#timeline">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="pages/contact.html" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> Available for work
+      </div>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        <span class="name-char">M</span><span class="name-char">a</span><span class="name-char">a</span><span
+          class="name-char">z</span>
+      </h1>
+      <h2 class="hero-title">
+        <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+      </h2>
+      <p class="hero-desc">
+        Passionate about building clean, responsive websites and turning ideas into real digital experiences. Based in
+        Pakistan 🇵🇰
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary magnetic">
+          <span>View My Work</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline magnetic">
+          <span>Let's Talk</span>
+          <i class="fas fa-comment"></i>
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="Fiverr"><i class="fas fa-briefcase"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orbit-container">
+        <div class="orbit orbit-1">
+          <div class="orbit-dot"><i class="fab fa-html5"></i></div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orbit-dot"><i class="fab fa-css3-alt"></i></div>
+        </div>
+        <div class="orbit orbit-3">
+          <div class="orbit-dot"><i class="fab fa-js"></i></div>
+        </div>
+        <div class="avatar-wrap">
+          <div class="avatar-glow"></div>
+          <div class="avatar">
+            <span>M</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card card-a">
+        <i class="fas fa-code"></i>
+        <div>
+          <strong>Clean Code</strong>
+          <small>Always</small>
+        </div>
+      </div>
+      <div class="floating-card card-b">
+        <i class="fas fa-mobile-alt"></i>
+        <div>
+          <strong>Responsive</strong>
+          <small>All Devices</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+          <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+          <p>Projects Done</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <span class="stat-num" data-target="30">0</span><span class="stat-plus">+</span>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+          <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          <p>Years Exp</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Get to know me</span>
+        <h2 class="section-title">About <span>Me</span></h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-left">
+          <div class="about-img-wrap">
+            <div class="about-img-bg"></div>
+            <div class="about-img-card">
+              <div class="about-avatar">M</div>
+              <div class="about-name-tag">
+                <strong>Maaz</strong>
+                <small>Frontend Developer</small>
+              </div>
+            </div>
+            <div class="about-exp-badge">
+              <span>1+</span>
+              <small>Year of<br>Learning</small>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <h3>I build things for the web 🚀</h3>
+          <p>I'm a passionate beginner frontend developer from Pakistan. I love creating modern, clean, and responsive
+            websites that provide great user experiences.</p>
+          <p>My journey started with curiosity about how websites work, and now I'm building real projects and growing
+            every day. I believe in learning by doing.</p>
+          <div class="about-tags">
+            <span>🎯 Problem Solver</span>
+            <span>💡 Creative Thinker</span>
+            <span>📱 Mobile First</span>
+            <span>⚡ Fast Learner</span>
+            <span>🌍 Remote Ready</span>
+          </div>
+          <a href="pages/cv.html" class="btn btn-primary magnetic">
+            <span>Download CV</span>
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I know</span>
+        <h2 class="section-title">My <span>Skills</span></h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-bars">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS3 & Animations</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="skill-percent">60%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="60"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+              <span class="skill-percent">65%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="65"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><i class="fab fa-shopify"></i> Shopify</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="50"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-tools">
+          <h3>Tools & Technologies</h3>
+          <div class="tools-grid">
+            <div class="tool-card"><i class="fab fa-html5" style="color:#e34f26"></i><span>HTML5</span></div>
+            <div class="tool-card"><i class="fab fa-css3-alt" style="color:#1572b6"></i><span>CSS3</span></div>
+            <div class="tool-card"><i class="fab fa-js" style="color:#f7df1e"></i><span>JavaScript</span></div>
+            <div class="tool-card"><i class="fab fa-git-alt" style="color:#f05032"></i><span>Git</span></div>
+            <div class="tool-card"><i class="fab fa-github"></i><span>GitHub</span></div>
+            <div class="tool-card"><i class="fab fa-shopify" style="color:#96bf48"></i><span>Shopify</span></div>
+            <div class="tool-card"><i class="fas fa-paint-brush" style="color:#ff6584"></i><span>Figma</span></div>
+            <div class="tool-card"><i class="fas fa-terminal" style="color:#6c63ff"></i><span>VS Code</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What I've built</span>
+        <h2 class="section-title">My <span>Projects</span></h2>
+      </div>
+
+      <!-- PROJECT 1 - ECOMMERCE -->
+      <div class="project-showcase">
+        <div class="project-preview">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">hairglow-store.netlify.app</div>
+          </div>
+          <div class="project-screen ecom-screen">
+            <div class="ecom-nav">
+              <span class="ecom-logo">✨ HairGlow</span>
+              <div class="ecom-nav-links">
+                <span>Products</span><span>About</span><span>Cart 🛒</span>
+              </div>
+            </div>
+            <div class="ecom-hero">
+              <div class="ecom-hero-text">
+                <h3>Premium Hair Oil</h3>
+                <p>Natural • Organic • Pure</p>
+                <button>Shop Now →</button>
+              </div>
+              <div class="ecom-hero-img">
+                <div class="bottle">
+                  <div class="bottle-body"></div>
+                  <div class="bottle-cap"></div>
+                  <div class="bottle-label">HAIR<br>OIL</div>
+                </div>
+              </div>
+            </div>
+            <div class="ecom-products">
+              <div class="ecom-card">
+                <div class="ecom-card-img" style="background:linear-gradient(135deg,#ffd89b,#19547b)"></div><span>Argan
+                  Oil</span><strong>$24.99</strong>
+              </div>
+              <div class="ecom-card">
+                <div class="ecom-card-img" style="background:linear-gradient(135deg,#a8edea,#fed6e3)"></div>
+                <span>Coconut Oil</span><strong>$19.99</strong>
+              </div>
+              <div class="ecom-card">
+                <div class="ecom-card-img" style="background:linear-gradient(135deg,#d299c2,#fef9d7)"></div><span>Castor
+                  Oil</span><strong>$22.99</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <span class="project-number">01</span>
+          <span class="project-tag">Ecommerce</span>
+          <h3>Hair Oil Brand Store</h3>
+          <p>A fully responsive ecommerce landing page for a premium hair oil brand. Features product showcase, animated
+            hero section, product cards with hover effects, and a modern clean design.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check"></i> Responsive on all devices</li>
+            <li><i class="fas fa-check"></i> Animated product cards</li>
+            <li><i class="fas fa-check"></i> Modern UI/UX design</li>
+            <li><i class="fas fa-check"></i> CSS animations & transitions</li>
+          </ul>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Flexbox</span>
+          </div>
+          <div class="project-links">
+            <a href="projects/ecommerce/index.html" class="btn btn-primary magnetic" target="_blank">
+              <span>Live Demo</span><i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="#" class="btn btn-outline magnetic">
+              <span>GitHub</span><i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 - PORTFOLIO -->
+      <div class="project-showcase reverse">
+        <div class="project-preview">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">maaz-portfolio.netlify.app</div>
+          </div>
+          <div class="project-screen portfolio-screen">
+            <div class="port-nav">
+              <span>Maaz<b>.</b></span>
+              <div><span>About</span><span>Work</span><span>Contact</span></div>
+            </div>
+            <div class="port-hero">
+              <div class="port-text">
+                <small>Hello, I'm</small>
+                <h3>Maaz</h3>
+                <p>Frontend Developer</p>
+                <div class="port-btns">
+                  <button class="port-btn-p">View Work</button>
+                  <button class="port-btn-o">Hire Me</button>
+                </div>
+              </div>
+              <div class="port-avatar">M</div>
+            </div>
+            <div class="port-skills">
+              <div class="port-skill-bar"><span>HTML</span>
+                <div style="width:90%;background:linear-gradient(90deg,#6c63ff,#ff6584)"></div>
+              </div>
+              <div class="port-skill-bar"><span>CSS</span>
+                <div style="width:80%;background:linear-gradient(90deg,#6c63ff,#ff6584)"></div>
+              </div>
+              <div class="port-skill-bar"><span>JS</span>
+                <div style="width:60%;background:linear-gradient(90deg,#6c63ff,#ff6584)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <span class="project-number">02</span>
+          <span class="project-tag">Portfolio</span>
+          <h3>Personal Portfolio Website</h3>
+          <p>This very portfolio — built completely from scratch with smooth scroll animations, particle background,
+            custom cursor, typing effects, and a fully responsive dark theme design.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check"></i> Custom animated cursor</li>
+            <li><i class="fas fa-check"></i> Particle background</li>
+            <li><i class="fas fa-check"></i> Typing text effect</li>
+            <li><i class="fas fa-check"></i> Scroll reveal animations</li>
+          </ul>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Canvas API</span>
+          </div>
+          <div class="project-links">
+            <a href="#home" class="btn btn-primary magnetic">
+              <span>Live Demo</span><i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="#" class="btn btn-outline magnetic">
+              <span>GitHub</span><i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 - LANDING PAGE -->
+      <div class="project-showcase">
+        <div class="project-preview">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">maaz-landing.netlify.app</div>
+          </div>
+          <div class="project-screen landing-screen">
+            <div class="land-hero">
+              <div class="land-glow"></div>
+              <h3>Next Level<br><span>Design</span></h3>
+              <p>Modern • Fast • Beautiful</p>
+              <button>Get Started</button>
+            </div>
+            <div class="land-features">
+              <div class="land-feat"><i class="fas fa-bolt"></i><span>Fast</span></div>
+              <div class="land-feat"><i class="fas fa-shield-alt"></i><span>Secure</span></div>
+              <div class="land-feat"><i class="fas fa-star"></i><span>Premium</span></div>
+            </div>
+            <div class="land-cards">
+              <div class="land-card" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+                <i class="fas fa-rocket"></i>
+                <span>Launch</span>
+              </div>
+              <div class="land-card" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+                <i class="fas fa-heart"></i>
+                <span>Design</span>
+              </div>
+              <div class="land-card" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">
+                <i class="fas fa-code"></i>
+                <span>Build</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <span class="project-number">03</span>
+          <span class="project-tag">Landing Page</span>
+          <h3>Animated Landing Page</h3>
+          <p>A stunning animated landing page with gradient backgrounds, glowing effects, CSS keyframe animations,
+            floating elements, and a fully mobile-first responsive layout.</p>
+          <ul class="project-features">
+            <li><i class="fas fa-check"></i> CSS keyframe animations</li>
+            <li><i class="fas fa-check"></i> Gradient & glow effects</li>
+            <li><i class="fas fa-check"></i> Mobile-first design</li>
+            <li><i class="fas fa-check"></i> Smooth hover transitions</li>
+          </ul>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>Animations</span><span>Grid</span>
+          </div>
+          <div class="project-links">
+            <a href="projects/landing/index.html" class="btn btn-primary magnetic" target="_blank">
+              <span>Live Demo</span><i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="#" class="btn btn-outline magnetic">
+              <span>GitHub</span><i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIMELINE / JOURNEY -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">My story</span>
+        <h2 class="section-title">My <span>Journey</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fas fa-lightbulb"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 — Start</span>
+            <h3>The Beginning</h3>
+            <p>Discovered web development and fell in love with HTML & CSS. Built my first ever webpage — a simple
+              personal page.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fab fa-css3-alt"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 — Growth</span>
+            <h3>CSS Mastery</h3>
+            <p>Learned advanced CSS — Flexbox, Grid, animations, and responsive design. Started building real-looking
+              websites.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fab fa-js"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 — Leveling Up</span>
+            <h3>JavaScript Journey</h3>
+            <p>Started learning JavaScript — DOM manipulation, events, and building interactive features for websites.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 — Now</span>
+            <h3>Building Projects</h3>
+            <p>Building real projects, creating this portfolio, and actively looking for freelance opportunities and
+              remote jobs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Say hello</span>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let's build something amazing together!</h3>
+          <p>I'm open to freelance projects, remote jobs, and collaborations. Whether you have a project in mind or just
+            want to say hi — my inbox is always open.</p>
+          <div class="contact-items">
+            <a href="mailto:maaz@email.com" class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <span>maaz@email.com</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>Location</strong>
+                <span>Pakistan 🇵🇰</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-circle"
+                  style="color:#22c55e;font-size:0.5rem"></i></div>
+              <div>
+                <strong>Status</strong>
+                <span>Available for work</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-briefcase"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" placeholder="john@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full magnetic">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">Maaz<span>.</span></a>
+      <p>Designed & Built with ❤️ by <span>Maaz</span> · 2024</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
